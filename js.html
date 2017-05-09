@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="saisie" id="myInput">Entrer votre text : </label>
+        <input type="text" name="saisie" id="saisie" placeholder="Entrer votre text pour l'enregistrer !!" />
+        <input type="button" id="boutton" for="saisie" value="Ajouter à la liste"></input>
+    </form>
+    <ul id="result">
+        <li>Votre saisie s'afficheras ici :</li>
+    </ul>
+    <script>
+        //creer les variable à utiliser
+        let ul = document.getElementById("result")
+        let form = document.getElementById("saisie");
+        let boutton = document.getElementById("boutton");
+        // créer evenement sur boutton et sa function
+        boutton.addEventListener('click', function() {
+            //creer un li
+            let li = document.createElement("li");
+            // lui mettre la valeur
+            li.textContent = form.value;
+            // liée li créer à l'ul
+            ul.appendChild(li);
+            //créer un button 
+            let buton = document.createElement("button");
+            //lui mettre un text
+            buton.textContent = "Suppr";
+            // lui faire sa fonction
+            buton.onclick = function() {
+                //lui dire de remove le li
+                li.remove();
+            };
+            //créer un bouton pour modif
+            let potar = document.createElement('button');
+            //lui mettre du text
+            potar.textContent = "Modif";
+            //donner la fonction de potar
+            potar.onclick = function() {
+                //faire une demande prompt pour new value
+                newtext = prompt("Votre modif");
+                //changer,ecraser,coller la nouvelle valeur
+                li.xxxxxxxxxxxx(newtext);
+            };
+            //placer les button dans li
+            li.appendChild(buton);
+            li.appendChild(potar);
+        });
+    </script>
+</body>
+
+</html>
