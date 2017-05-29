@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#" onclick="quizz()">question</a>
+    <script>
+        let reponce = prompt('Devine ?');
+        while (reponce !== '4') {
+            let p = document.createElement('p');
+            p.textContent = 'Faux' + reponce;
+            document.body.appendChild(p);
+            reponce = prompt('non essaye encore?');
+
+        };
+    </script>
+</body>
+
+</html>

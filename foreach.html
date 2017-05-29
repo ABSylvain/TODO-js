@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="cle" placeholder="Entrer votre clé" onfocus="javascript:this.value=''"></input>
+    <input type="text" id="valeur" placeholder="Entrer votre valeur" onfocus="javascript:this.value=''"></input>
+    <button id="button">...</button>
+    <script>
+        /// creer des clé/value et les implanter dans un objet
+        //les variable a utiliser
+        let cle = document.getElementById('cle');
+        let valeur = document.getElementById('valeur');
+        let button = document.getElementById('button');
+        //l'objet
+        let songoku = {
+            pv: 50,
+            att: 8,
+            def: 5,
+        };
+        // ecoute sur button
+        button.addEventListener('click', plus);
+
+        //function du button
+        function plus() {
+            if (songoku.hasOwnProperty(valeur.value)) {
+                // objet[cle.value] += ',' + valeur.value;
+                if (Array.isArray(songoku[cle.value])) {
+                    songoku[cle.value].push(valeur.value);
+                } else {
+                    songoku[cle.value] = [songoku[cle.value], valeur.value];
+                }
+            } else {
+                songoku[cle.value] = valeur.value;
+            }
+            affiche();
+        };
+
+        function affiche() {
+            // parcourir les valeur des clé
+            for (let valu in songoku) {
+                console.log(songoku[valu]);
+            };
+            // afficher toute les clé/valeur
+            for (let all in songoku) {
+                console.log(songoku)
+            };
+        };
+    </script>
+</body>
+
+</html>
